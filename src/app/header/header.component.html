@@ -4,7 +4,22 @@
     <nav>
       <ul>
         <li>
-          <a href="#" routerLink="/cart-page">Cart</a>
+          <a routerLink="/link">Login</a>
+        </li>
+
+        <li class="menu-container">
+          <a routerLink="/dashboard">User</a>
+          <div class="menu">
+            <a routerLink="/profile">Profile</a>
+            <a routerLink="/orders">Orders</a>
+            <a routerLink="/">Logout</a>
+          </div>
+        </li>
+
+        <li>
+          <a href="#" routerLink="/cart-page">
+            Cart <span class="quantity">3</span>
+          </a>
         </li>
       </ul>
     </nav>
