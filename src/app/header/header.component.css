@@ -1,0 +1,38 @@
+header{
+  background: #8a8a5c;
+  padding: 0;
+  border-bottom: 1px solid #ffff4d;
+}
+
+a{
+  color: #ffff4d;
+}
+
+a:hover{
+  background: #808000;
+}
+
+a span{
+  color: #b3b300;
+}
+
+.container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+a.logo{
+  font-weight: bold;
+  padding: 1em;
+}
+
+nav ul{
+  list-style-type: none;
+  margin: 0;
+}
+
+nav ul li a {
+  padding: 1em;
+  display: inline-block;
+}
