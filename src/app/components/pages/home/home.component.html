@@ -1,0 +1,18 @@
+<ul>
+    <li *ngFor="let product of products">
+        <a routerLink="/product/{{ product.id }}">
+            <img [src]="product.imageUrl" [alt]="product.productName"/>
+            <div class="content">
+                <div class="name">
+                    {{product.productName}}
+                </div>
+                <div class="category">
+                    {{ product.productCategory }}
+                </div>
+                <div class="price">
+                    {{ product.price | currency }}
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>
