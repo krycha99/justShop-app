@@ -1,5 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/interface/product';
 import { ProductService } from 'src/app/service/product.service';
 
@@ -9,12 +10,26 @@ import { ProductService } from 'src/app/service/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   public products: Product[] = [];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, activatedRoute:ActivatedRoute) {
+    activatedRoute.params.subscribe((params) => {
+      if(params['searchTerm'])
+      this.productService.getAllProductsBySearch(params['searchTerm']).subscribe(
+        (response: Product[]) => {
+          this.products = response;
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+      );
+      else
+      this.getProducts();
+    })
+   }
 
   ngOnInit() {
-    this.getProducts();
   }
 
   public getProducts(): void{

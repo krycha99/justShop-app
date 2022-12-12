@@ -28,6 +28,7 @@ header{
     display: flex;
     justify-content: space-between;
     width: fit-content;
+    height: 2.5rem;
   }
 
   a.logo{
