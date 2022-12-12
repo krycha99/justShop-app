@@ -1,1 +1,23 @@
-<p>product-page works!</p>
+<div class="container">
+    <img [src]="product.imageUrl" [alt]="product.productName"/>
+
+    <div class="details">
+        <div class="header">
+            <span class="name">{{ product.productName }}</span>
+        </div>
+
+        <div class="category">
+            <a routerLink="/category/{{ product.productCategory }}">{{ product.productCategory }}</a>
+        </div>
+
+        <div class="description">
+            <span>{{ product.description }}</span>
+        </div>
+
+        <div class="price">
+            <span>{{ product.price | currency }}</span>
+        </div>
+
+        <button>Add To Cart</button>
+    </div>
+</div>
